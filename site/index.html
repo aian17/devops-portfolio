@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aiana | Systems Administrator to DevOps</title>
+  <meta name="description" content="Systems administrator moving into DevOps. AWS Solutions Architect Associate. Linux, networking, Terraform, CI/CD.">
+  <style>
+    :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#5b6470; --accent:#0b6bcb; --card:#f4f6f9; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0f1419; --fg:#e8eaed; --muted:#9aa4b0; --accent:#5ea8ff; --card:#1a212a; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+           background:var(--bg); color:var(--fg); line-height:1.6; }
+    main { max-width: 760px; margin: 0 auto; padding: 4rem 1.25rem; }
+    h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
+    .tag { color: var(--muted); margin: 0 0 2rem; font-size: 1.1rem; }
+    h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
+    .card { background: var(--card); border-radius: 10px; padding: 1rem; }
+    .card strong { display:block; margin-bottom:.25rem; }
+    a { color: var(--accent); }
+    footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Aiana</h1>
+  <p class="tag">Systems administrator moving into DevOps.</p>
+
+  <p>I run Linux servers and networks in production, hold the AWS Solutions Architect Associate
+     certification, and I'm finishing a master's degree in networking. I'm now turning that
+     experience into infrastructure as code and automated delivery.</p>
+
+  <h2>What this site is</h2>
+  <p>This page is itself the project: a private S3 bucket behind CloudFront with HTTPS, DNS in
+     Route 53, everything defined in Terraform, and deployed by GitHub Actions using short-lived
+     OIDC credentials (no stored access keys).</p>
+
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card"><strong>Cloud</strong>AWS (S3, CloudFront, Route 53, IAM, VPC)</div>
+    <div class="card"><strong>IaC and CI/CD</strong>Terraform, GitHub Actions</div>
+    <div class="card"><strong>Systems</strong>Linux administration</div>
+    <div class="card"><strong>Networking</strong>DNS, firewalls, network design</div>
+  </div>
+
+  <h2>Links</h2>
+  <p>
+    <a href="https://github.com/YOUR_GITHUB_USERNAME/devops-portfolio">Source code for this site</a> &middot;
+    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/">LinkedIn</a>
+  </p>
+
+  <footer>Built with Terraform. Hosted on AWS.</footer>
+</main>
+</body>
+</html>
