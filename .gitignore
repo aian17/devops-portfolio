@@ -4,3 +4,4 @@
 crash.log
 *.tfvars
 !terraform.tfvars.example
+.DS_Store
