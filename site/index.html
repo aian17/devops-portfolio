@@ -1,58 +1,447 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aiana | Systems Administrator to DevOps</title>
-  <meta name="description" content="Systems administrator moving into DevOps. AWS Solutions Architect Associate. Linux, networking, Terraform, CI/CD.">
-  <style>
-    :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#5b6470; --accent:#0b6bcb; --card:#f4f6f9; }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg:#0f1419; --fg:#e8eaed; --muted:#9aa4b0; --accent:#5ea8ff; --card:#1a212a; }
-    }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-           background:var(--bg); color:var(--fg); line-height:1.6; }
-    main { max-width: 760px; margin: 0 auto; padding: 4rem 1.25rem; }
-    h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
-    .tag { color: var(--muted); margin: 0 0 2rem; font-size: 1.1rem; }
-    h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
-    .card { background: var(--card); border-radius: 10px; padding: 1rem; }
-    .card strong { display:block; margin-bottom:.25rem; }
-    a { color: var(--accent); }
-    footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aiana Mambetova — Systems Administrator → DevOps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E1622;
+    --panel: #131E2E;
+    --panel-line: #24384F;
+    --paper: #E9EEF3;
+    --paper-dim: #8FA1B5;
+    --trace: #F0A24C;
+    --trace-dim: rgba(240, 162, 76, 0.35);
+    --ok: #6FC6A0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    background-image:
+      linear-gradient(var(--panel-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--panel-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+    background-position: -1px -1px;
+    color: var(--paper);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 72px 28px 48px;
+  }
+
+  header.hero {
+    margin-bottom: 64px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--trace);
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--ok);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(111, 198, 160, 0.2);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(111, 198, 160, 0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(111, 198, 160, 0.08); }
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    max-width: 14ch;
+  }
+
+  .role {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    color: var(--paper-dim);
+    margin-top: 14px;
+    max-width: 46ch;
+  }
+
+  .intro {
+    margin-top: 24px;
+    max-width: 62ch;
+    color: var(--paper-dim);
+    font-size: 15.5px;
+  }
+
+  /* Diagram section */
+  section.proof {
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 2px;
+    padding: 36px 32px 32px;
+    margin-bottom: 56px;
+    position: relative;
+  }
+
+  .proof-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--trace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .proof-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    margin-bottom: 22px;
+  }
+
+  .proof-caption {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--paper-dim);
+    max-width: 60ch;
+  }
+
+  svg.diagram { width: 100%; height: auto; display: block; }
+
+  .diagram text {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .diagram .node-box {
+    fill: var(--ink);
+    stroke: var(--panel-line);
+    stroke-width: 1;
+  }
+
+  .diagram .node-label {
+    fill: var(--paper);
+    font-size: 12px;
+  }
+
+  .diagram .node-sub {
+    fill: var(--paper-dim);
+    font-size: 10px;
+  }
+
+  .diagram .trace {
+    fill: none;
+    stroke: var(--trace);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 3;
+    opacity: 0.85;
+  }
+
+  .diagram .trace-anim {
+    stroke-dasharray: 340;
+    stroke-dashoffset: 340;
+    animation: draw 1.8s ease-out forwards;
+  }
+
+  .diagram .group-box {
+    fill: none;
+    stroke: var(--panel-line);
+    stroke-width: 1;
+    stroke-dasharray: 2 2;
+  }
+
+  .diagram .group-label {
+    fill: var(--trace);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Hand-drawn margin note, like an engineer annotating their own blueprint */
+  .diagram .annotation-arrow {
+    fill: none;
+    stroke: var(--trace);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    opacity: 0;
+    animation: annotate-arrow 0.9s ease-out 1.9s forwards;
+  }
+
+  .diagram .annotation-text {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    fill: var(--trace);
+    opacity: 0;
+    animation: annotate-text 0.6s ease-out 2.5s forwards;
+  }
+
+  @keyframes annotate-arrow {
+    to { stroke-dashoffset: 0; opacity: 1; }
+  }
+
+  @keyframes annotate-text {
+    from { opacity: 0; transform: translateY(4px) rotate(-3deg); }
+    to { opacity: 1; transform: translateY(0) rotate(-3deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .diagram .annotation-arrow,
+    .diagram .annotation-text { animation: none; opacity: 1; stroke-dashoffset: 0; }
+  }
+
+  /* Skills */
+  section.skills {
+    margin-bottom: 56px;
+  }
+
+  .section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: var(--paper-dim);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--panel-line);
+  }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 18px;
+    column-gap: 24px;
+  }
+
+  .skill-cat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--trace);
+    padding-top: 3px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--paper);
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    padding: 5px 10px;
+    border-radius: 2px;
+  }
+
+  /* Links */
+  footer {
+    display: flex;
+    gap: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--panel-line);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    flex-wrap: wrap;
+  }
+
+  footer a {
+    color: var(--paper);
+    text-decoration: none;
+    border-bottom: 1px solid var(--panel-line);
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  footer a:hover {
+    color: var(--trace);
+    border-color: var(--trace);
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 48px 20px 40px; }
+    .skill-grid { grid-template-columns: 1fr; row-gap: 10px; }
+    .skill-cat { padding-top: 0; }
+    section.proof { padding: 24px 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .trace-anim { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
 </head>
 <body>
-<main>
-  <h1>Aiana</h1>
-  <p class="tag">Systems administrator moving into DevOps.</p>
+<div class="wrap">
 
-  <p>I run Linux servers and networks in production, hold the AWS Solutions Architect Associate
-     certification, and I'm finishing a master's degree in networking. I'm now turning that
-     experience into infrastructure as code and automated delivery.</p>
+  <header class="hero">
+    <div class="eyebrow">SYSTEM STATUS: LIVE</div>
+    <h1>Aiana Mambetova</h1>
+    <div class="role">Systems administrator moving into DevOps.</div>
+    <p class="intro">
+      I run Linux servers and networks in production, hold the AWS Solutions Architect
+      Associate certification, and I'm finishing a master's degree in Information Technology,
+      with a focus on networking. I'm now turning that experience into infrastructure as code
+      and automated delivery.
+    </p>
+  </header>
 
-  <h2>What this site is</h2>
-  <p>This page is itself the project: a private S3 bucket behind CloudFront with HTTPS, DNS in
-     Route 53, everything defined in Terraform, and deployed by GitHub Actions using short-lived
-     OIDC credentials (no stored access keys).</p>
+  <section class="proof">
+    <div class="proof-label">This page is the project</div>
+    <div class="proof-title">A private S3 bucket, served over CloudFront, deployed by GitHub Actions</div>
 
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card"><strong>Cloud</strong>AWS (S3, CloudFront, Route 53, IAM, VPC)</div>
-    <div class="card"><strong>IaC and CI/CD</strong>Terraform, GitHub Actions</div>
-    <div class="card"><strong>Systems</strong>Linux administration</div>
-    <div class="card"><strong>Networking</strong>DNS, firewalls, network design</div>
-  </div>
+    <svg class="diagram" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- group boxes -->
+      <rect class="group-box" x="30" y="30" width="230" height="120" rx="2"/>
+      <text class="group-label" x="40" y="46">CI/CD</text>
 
-  <h2>Links</h2>
-  <p>
-    <a href="https://github.com/YOUR_GITHUB_USERNAME/devops-portfolio">Source code for this site</a> &middot;
-    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/">LinkedIn</a>
-  </p>
+      <rect class="group-box" x="470" y="20" width="300" height="220" rx="2"/>
+      <text class="group-label" x="480" y="36">AWS</text>
 
-  <footer>Built with Terraform. Hosted on AWS.</footer>
-</main>
+      <!-- CI/CD nodes -->
+      <rect class="node-box" x="50" y="60" width="90" height="42" rx="2"/>
+      <text class="node-label" x="62" y="78">pull_request</text>
+      <text class="node-sub" x="62" y="92">terraform plan</text>
+
+      <rect class="node-box" x="170" y="60" width="70" height="42" rx="2"/>
+      <text class="node-label" x="180" y="78">merge</text>
+      <text class="node-sub" x="180" y="92">→ main</text>
+
+      <rect class="node-box" x="110" y="115" width="120" height="30" rx="2"/>
+      <text class="node-label" x="122" y="134">OIDC token</text>
+
+      <!-- connecting traces within CI/CD -->
+      <path class="trace" d="M 140 81 L 170 81" />
+      <path class="trace" d="M 170 130 L 230 90" />
+
+      <!-- Route53 / ACM -->
+      <rect class="node-box" x="500" y="45" width="90" height="38" rx="2"/>
+      <text class="node-label" x="512" y="62">Route 53</text>
+      <text class="node-sub" x="512" y="75">DNS</text>
+
+      <rect class="node-box" x="620" y="45" width="90" height="38" rx="2"/>
+      <text class="node-label" x="632" y="62">ACM</text>
+      <text class="node-sub" x="632" y="75">TLS cert</text>
+
+      <!-- CloudFront -->
+      <rect class="node-box" x="560" y="115" width="110" height="42" rx="2"/>
+      <text class="node-label" x="572" y="133">CloudFront</text>
+      <text class="node-sub" x="572" y="147">edge cache</text>
+
+      <path class="trace" d="M 545 83 L 600 115" />
+      <path class="trace" d="M 665 83 L 630 115" />
+
+      <!-- S3 -->
+      <rect class="node-box" x="580" y="185" width="90" height="42" rx="2"/>
+      <text class="node-label" x="592" y="203">S3 bucket</text>
+      <text class="node-sub" x="592" y="217">static site</text>
+
+      <path class="trace" d="M 615 157 L 615 185" />
+
+      <!-- User -->
+      <rect class="node-box" x="330" y="200" width="90" height="42" rx="2"/>
+      <text class="node-label" x="345" y="218">visitor</text>
+      <text class="node-sub" x="345" y="232">HTTPS</text>
+
+      <path class="trace" d="M 420 218 L 560 136" />
+
+      <!-- OIDC to AWS trace (the hero animated line) -->
+      <path class="trace trace-anim" d="M 230 130 C 350 130, 400 40, 500 60" />
+
+      <!-- hand-drawn margin note, drawn in after the trace finishes -->
+      <path class="annotation-arrow" d="M 300 195 C 320 175, 340 140, 358 108" />
+      <text class="annotation-text" x="238" y="222" transform="rotate(-3 238 222)">no stored keys — just this</text>
+
+      <!-- tiny pixel cat, tucked away — a signature, not a decoration -->
+      <g class="pixel-cat" transform="translate(760, 268)" opacity="0.55">
+        <rect x="0" y="4" width="2" height="2" fill="var(--paper-dim)"/>
+        <rect x="8" y="4" width="2" height="2" fill="var(--paper-dim)"/>
+        <rect x="0" y="6" width="10" height="8" fill="var(--paper-dim)"/>
+        <rect x="2" y="9" width="1" height="1" fill="var(--ink)"/>
+        <rect x="7" y="9" width="1" height="1" fill="var(--ink)"/>
+        <rect x="3" y="12" width="4" height="1" fill="var(--ink)"/>
+      </g>
+    </svg>
+
+    <p class="proof-caption">
+      Every part of this — the bucket, the distribution, the DNS record, the certificate —
+      is defined in Terraform with remote state in S3. GitHub Actions runs <code>plan</code> on
+      every pull request and <code>apply</code> on merge, authenticating to AWS via OIDC rather
+      than long-lived credentials.
+    </p>
+  </section>
+
+  <section class="skills">
+    <div class="section-heading">Skills</div>
+    <div class="skill-grid">
+      <div class="skill-cat">Cloud</div>
+      <div class="skill-tags">
+        <span class="tag">AWS S3</span>
+        <span class="tag">CloudFront</span>
+        <span class="tag">Route 53</span>
+        <span class="tag">IAM</span>
+        <span class="tag">VPC</span>
+      </div>
+
+      <div class="skill-cat">IaC / CI-CD</div>
+      <div class="skill-tags">
+        <span class="tag">Terraform</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">OIDC</span>
+      </div>
+
+      <div class="skill-cat">Systems</div>
+      <div class="skill-tags">
+        <span class="tag">Linux administration</span>
+      </div>
+
+      <div class="skill-cat">Networking</div>
+      <div class="skill-tags">
+        <span class="tag">DNS</span>
+        <span class="tag">Firewalls</span>
+        <span class="tag">Network design</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://github.com/aian17/devops-portfolio">Source code ↗</a>
+    <a href="https://www.linkedin.com/in/aian-mambetova-8359572b8/">LinkedIn ↗</a>
+  </footer>
+
+</div>
+<script>
+  console.log(
+    "%c  ▄▀▀▄▄▄▄▄▄▀▀▄  \n %c(  o        o  ) %cmeow — you found the cat in the diagram too",
+    "color:#F0A24C;font-family:monospace",
+    "color:#F0A24C;font-family:monospace",
+    "color:#8FA1B5;font-family:monospace"
+  );
+</script>
 </body>
 </html>
