@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aiana Mambetova — Cloud &amp; AI Developer</title>
+<meta name="description" content="AWS-certified Cloud &amp; AI developer in Chicago. I automate the cloud and build AI agents that give businesses their time back. This page is the project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d1b24;--mute:#595468;--pink:#d9559a;--violet:#8a6bd8;--glass-a:rgba(255,255,255,.78);--glass-b:rgba(255,255,255,.4)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);line-height:1.5;background:
+ radial-gradient(900px 600px at 6% 4%,#ffd9ec 0,transparent 60%),
+ radial-gradient(900px 700px at 96% 14%,#d9d6ff 0,transparent 60%),
+ radial-gradient(900px 700px at 55% 60%,#d4efff 0,transparent 60%),
+ radial-gradient(800px 600px at 10% 90%,#ffe6d6 0,transparent 60%),#f7f3fb;background-attachment:fixed}
+a{color:inherit}
+.wrap{max-width:1300px;margin:0 auto;padding:0 24px}
+.glass{background:linear-gradient(135deg,var(--glass-a),var(--glass-b));border:1px solid rgba(255,255,255,.95);border-radius:36px;box-shadow:0 30px 80px rgba(120,100,180,.16),inset 0 1px 0 #fff;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+nav.top{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 44px;padding:32px 0 26px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+nav.top a{text-decoration:none;color:#4a4560;transition:color .2s}
+nav.top a:hover{color:var(--pink)}
+.hero{padding:70px 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;min-height:700px;align-items:center}
+.role{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(28px,3.4vw,44px);color:var(--pink)}
+h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(54px,8vw,112px);line-height:.95;letter-spacing:-.02em;margin:6px 0 30px;
+ background:linear-gradient(100deg,#1d1b24 40%,#b79af5 50%,#1d1b24 60%) 100% 0/250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sweep 2.8s ease .5s 1 forwards}
+@keyframes sweep{to{background-position:0 0}}
+.lead{font-size:clamp(19px,2vw,24px);line-height:1.35;max-width:580px;margin-bottom:18px;font-weight:500;min-height:2.7em}
+.lead .caret{display:inline-block;width:2px;height:1em;background:var(--pink);margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sub{font-size:16px;line-height:1.7;color:var(--mute);max-width:560px}
+.cta{display:inline-block;margin-top:34px;padding:16px 38px;border-radius:99px;background:linear-gradient(135deg,#ff7ab8,#b58cff);color:#fff;text-decoration:none;font-weight:600;letter-spacing:.14em;font-size:13px;box-shadow:0 14px 34px rgba(200,110,200,.4),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .25s,box-shadow .25s}
+.cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(200,110,200,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+.right{position:relative;height:560px}
+.photo{position:absolute;right:20px;top:0;width:min(330px,70%);aspect-ratio:330/430;border-radius:30px;overflow:hidden;border:8px solid rgba(255,255,255,.88);box-shadow:0 30px 70px rgba(100,80,160,.3);transform:rotate(3deg);animation:float 7s ease-in-out infinite}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes float{0%,100%{transform:rotate(3deg) translateY(0)}50%{transform:rotate(2deg) translateY(-9px)}}
+.cap{position:absolute;right:10px;top:455px;padding:12px 22px;border-radius:99px;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:#3b3552;background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,255,255,.62));border:1px solid #fff;box-shadow:0 16px 40px rgba(110,90,170,.22);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overflow:hidden;white-space:nowrap}
+.cap::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.9) 50%,transparent 60%);transform:translateX(-120%);animation:glint 5s ease-in-out 2s infinite}
+@keyframes glint{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+/* robot */
+.robot{position:absolute;left:8px;top:405px;width:170px;cursor:pointer;z-index:4;animation:bob 4.6s ease-in-out infinite;transition:filter .3s}
+.robot:hover{filter:drop-shadow(0 8px 18px rgba(138,107,216,.35))}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.robot .arm{transform-box:fill-box;transform-origin:20% 90%;animation:wave 2.4s ease-in-out .8s 2,wave 2.4s ease-in-out 9s infinite}
+@keyframes wave{0%,100%{transform:rotate(0)}15%{transform:rotate(-24deg)}30%{transform:rotate(8deg)}45%{transform:rotate(-24deg)}60%{transform:rotate(6deg)}75%{transform:rotate(0)}}
+.robot .eye{transform-box:fill-box;transform-origin:center;animation:eyeblink 5s infinite}
+@keyframes eyeblink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.08)}}
+.robot .mouth{transform-box:fill-box;transform-origin:center;transition:transform .25s}
+.robot:hover .mouth{transform:scale(1.35)}
+.robot .tip{position:absolute;left:100%;top:-6px;margin-left:6px;padding:9px 14px;border-radius:14px;background:rgba(255,255,255,.95);box-shadow:0 12px 30px rgba(100,80,160,.22);font-size:13px;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(6px);transition:.25s;pointer-events:none}
+.robot:hover .tip,.robot:focus .tip{opacity:1;transform:none}
+.sec{padding:76px 80px;margin-top:44px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink)}
+h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(38px,5vw,60px);margin:12px 0 26px;letter-spacing:-.01em}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:start}
+.about p{font-size:19px;line-height:1.75;color:#3f3a52}
+.id{padding:30px;border-radius:28px;background:linear-gradient(145deg,#fff,#efe7ff);border:1px solid #fff;box-shadow:0 20px 50px rgba(120,100,180,.2)}
+.id img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%;border-radius:18px;margin-bottom:18px;display:block}
+.id .t{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--violet)}
+.id .r{font-family:'Playfair Display',serif;font-size:26px;line-height:1.25;margin:10px 0 16px}
+.id .l{font-size:13px;color:var(--mute);margin-top:6px}
+.chip{display:inline-block;padding:7px 14px;border-radius:99px;background:#fff;border:1px solid #e3d9f7;font-size:13px;margin:0 6px 8px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.c{position:relative;padding:26px;border-radius:26px;background:rgba(255,255,255,.72);border:1px solid #fff;box-shadow:0 14px 40px rgba(120,100,180,.13);transition:transform .35s,box-shadow .35s;overflow:hidden}
+.c::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(181,140,255,.2),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.c:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 26px 60px rgba(120,100,180,.24)}
+.c:hover::before{opacity:1}
+.c .th{font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;padding:14px 16px;border-radius:16px;margin-bottom:16px;color:#2b2740}
+.c .th em{font-style:normal;color:#8a85a0}
+.t1{background:linear-gradient(135deg,#ffe1ef,#f3e5ff)}.t2{background:linear-gradient(135deg,#d9f3ff,#e8e6ff)}.t3{background:linear-gradient(135deg,#fff3cf,#ffe1ef)}
+.c .pt{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);margin-bottom:8px}
+.c h4{font-size:18px;line-height:1.3;margin:0 0 8px}
+.c p{font-size:14px;line-height:1.6;color:#5b5670}
+.c code{background:#f1ebfb;padding:1px 6px;border-radius:6px;font-size:12px}
+.c .n{font-family:'IBM Plex Mono',monospace;color:var(--violet);font-size:13px}
+.ai{font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,34px);line-height:1.38;max-width:980px}
+.ai em{color:var(--pink)}
+.cards4{grid-template-columns:repeat(4,1fr)}
+.case-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.diagram{width:100%;height:auto;background:rgba(255,255,255,.6);border:1px solid #fff;border-radius:24px;padding:12px;box-shadow:0 14px 40px rgba(120,100,180,.13)}
+.group-box{fill:rgba(255,255,255,.4);stroke:#c9b8f2;stroke-dasharray:4 4}
+.group-label{font:500 10px 'IBM Plex Mono',monospace;fill:#8a6bd8;letter-spacing:.15em}
+.node-box{fill:#fff;stroke:#d6c8f5}
+.node-label{font:600 11px Inter,sans-serif;fill:#1d1b24}
+.node-sub{font:400 9px 'IBM Plex Mono',monospace;fill:#6a6580}
+.trace{fill:none;stroke:#b58cff;stroke-width:1.6}
+.trace-anim{stroke-dasharray:6 6;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-24}}
+.annotation-arrow{fill:none;stroke:#e0509f;stroke-width:1.4}
+.annotation-text{font:italic 500 14px 'Playfair Display',serif;fill:#d9559a}
+.case-copy h3{font-family:'Playfair Display',serif;font-weight:500;font-size:30px;line-height:1.25;margin:8px 0 14px}
+.case-copy p,.agent p{color:var(--mute);line-height:1.7;font-size:16px}
+.case-copy code,.agent code{background:#f1ebfb;padding:1px 6px;border-radius:6px;font-size:13px}
+.steps{display:flex;gap:10px;margin:22px 0 16px;flex-wrap:wrap}
+.step{padding:10px 18px;border-radius:99px;background:#fff;border:1px solid #e3d9f7;font-size:13px;font-weight:500}
+.step b{font-family:'IBM Plex Mono',monospace;color:var(--violet);margin-right:8px;font-size:11px}
+.stat{display:inline-block;padding:7px 14px;border-radius:99px;background:linear-gradient(135deg,#ffe1ef,#e8e0ff);font-size:13px;font-weight:500;margin:0 6px 8px 0}
+.agent{margin-top:34px;padding:30px 34px;border-radius:26px;background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(236,228,255,.6));border:1px solid #fff}
+.agent h4{font-family:'Playfair Display',serif;font-weight:500;font-size:26px;margin:6px 0 10px}
+.label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet)}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.skill-box{padding:24px;border-radius:24px;background:rgba(255,255,255,.72);border:1px solid #fff;box-shadow:0 14px 40px rgba(120,100,180,.12)}
+.skill-box h4{font-family:'Playfair Display',serif;font-weight:500;font-size:24px;margin-bottom:12px}
+.tag{display:inline-block;padding:6px 13px;border-radius:99px;background:#fff;border:1px solid #e3d9f7;font-size:13px;margin:0 6px 8px 0;transition:transform .2s,background .2s}
+.tag:hover{transform:translateY(-2px);background:#f5eeff}
+.repos{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+.repo{display:block;padding:26px 28px;border-radius:24px;background:rgba(255,255,255,.72);border:1px solid #fff;text-decoration:none;box-shadow:0 14px 40px rgba(120,100,180,.12);transition:transform .3s,box-shadow .3s}
+.repo:hover{transform:translateY(-5px);box-shadow:0 24px 54px rgba(120,100,180,.22)}
+.repo h4{font-family:'IBM Plex Mono',monospace;font-size:15px;margin-bottom:6px}
+.repo p{font-size:14px;color:var(--mute)}
+.contact{text-align:center;padding:84px 60px}
+.contact p{max-width:560px;margin:0 auto 30px;color:var(--mute);font-size:17px;line-height:1.7}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn2{padding:14px 30px;border-radius:99px;background:#fff;border:1px solid #e3d9f7;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;transition:transform .25s}
+.btn2:hover{transform:translateY(-3px)}
+footer{text-align:center;padding:50px 0 60px}
+footer .q{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3vw,30px);color:#6b4fb0}
+footer .lk{margin-top:14px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+footer .lk a{text-decoration:none;color:#6a6580}
+footer .lk a:hover{color:var(--pink)}
+footer .dep{display:inline-block;margin-top:18px;font:12px 'IBM Plex Mono',monospace;color:#8a85a0}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media(max-width:1000px){
+ .hero,.about,.case-grid{grid-template-columns:1fr}
+ .hero,.sec{padding:44px 28px}.contact{padding:56px 28px}
+ .cards,.skill-grid,.cards4{grid-template-columns:1fr 1fr}
+ .right{height:540px;max-width:420px;margin:10px auto 0;width:100%}
+}
+@media(max-width:640px){
+ .wrap{padding:0 14px}
+ .cards,.skill-grid,.cards4,.repos{grid-template-columns:1fr}
+ .hero,.sec{padding:34px 20px;border-radius:28px}
+ nav.top{gap:10px 22px;font-size:11px}
+ .right{height:480px}.photo{width:76%;right:auto;left:12%}.cap{left:112px;right:0;top:372px;font-size:15px;white-space:normal;text-align:center;padding:10px 16px;border-radius:22px;line-height:1.25}.robot{width:120px;top:340px;left:0}
+ .robot .tip{display:none}
+ .id .r{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .js .reveal{opacity:1;transform:none}
+ h1{background-position:0 0}
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+<nav class="top" aria-label="Main"><a href="#work">Problems</a><a href="#ai">AI-first</a><a href="#case">Case study</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header class="glass hero">
+ <div>
+  <div class="role">Cloud &amp; AI Developer</div>
+  <h1>Aiana<br>Mambetova</h1>
+  <p class="lead" id="lead" data-text="I automate the cloud and build AI agents that give businesses their time back.">I automate the cloud and build AI agents that give businesses their time back.</p>
+  <p class="sub">AWS-certified, based in Chicago. I write Python and Terraform, ship through automated pipelines, and design AI agents with guardrails. AI-first is how I work: I build, test and own everything that ships.</p>
+  <a class="cta" href="#contact">LET'S CONNECT</a>
+ </div>
+ <div class="right">
+  <div class="photo"><img src="img/about.jpg" width="660" height="860" alt="Portrait of Aiana Mambetova in Chicago"></div>
+  <div class="cap">Biggest ideas feel better together</div>
+  <div class="robot" id="robot" tabindex="0" aria-label="Friendly robot: ask me about my agents">
+   <svg viewBox="0 0 270 330" role="img" aria-label="A friendly frosted-glass robot waving hello" style="display:block;width:100%;height:auto">
+ <defs>
+  <radialGradient id="gl" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".96"/><stop offset=".5" stop-color="#eef6ff" stop-opacity=".8"/><stop offset="1" stop-color="#bcd8f2" stop-opacity=".66"/></radialGradient>
+  <radialGradient id="eye" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#5a5f78"/><stop offset=".5" stop-color="#14141f"/><stop offset="1" stop-color="#000"/></radialGradient>
+  <filter id="bl"><feGaussianBlur stdDeviation="9"/></filter>
+ </defs>
+ <ellipse cx="135" cy="318" rx="80" ry="10" fill="#7d93b8" opacity=".3" filter="url(#bl)"/>
+ <g class="arm"><path d="M210 205 Q258 190 256 135" fill="none" stroke="url(#gl)" stroke-width="24" stroke-linecap="round"/><circle cx="256" cy="128" r="19" fill="url(#gl)"/></g>
+ <path d="M60 210 Q30 235 40 268" fill="none" stroke="url(#gl)" stroke-width="24" stroke-linecap="round"/>
+ <rect x="62" y="190" width="146" height="116" rx="50" fill="url(#gl)"/>
+ <rect x="70" y="196" width="60" height="26" rx="13" fill="#fff" opacity=".55"/>
+ <rect x="38" y="52" width="194" height="150" rx="66" fill="url(#gl)"/>
+ <rect x="52" y="60" width="90" height="34" rx="17" fill="#fff" opacity=".6"/>
+ <rect x="58" y="76" width="154" height="102" rx="48" fill="#fff" opacity=".35"/>
+ <g id="eyes">
+  <g class="eye"><ellipse cx="102" cy="128" rx="19" ry="23" fill="url(#eye)"/><circle class="gl1" cx="109" cy="119" r="6" fill="#fff"/></g>
+  <g class="eye"><ellipse cx="168" cy="128" rx="19" ry="23" fill="url(#eye)"/><circle class="gl1" cx="175" cy="119" r="6" fill="#fff"/></g>
+ </g>
+ <path class="mouth" d="M118 160 Q135 174 152 160" fill="none" stroke="#6f86a8" stroke-width="5" stroke-linecap="round"/>
+ <circle cx="80" cy="156" r="10" fill="#ffc2dc" opacity=".5"/><circle cx="190" cy="156" r="10" fill="#ffc2dc" opacity=".5"/>
+</svg>
+   <span class="tip">Ask me about my agents</span>
+  </div>
+ </div>
+</header>
+
+<section class="glass sec reveal" id="about">
+ <div class="about"><div>
+  <div class="eyebrow">About</div><h2>My path</h2>
+  <p>My path is economics → code → systems → cloud &amp; AI, and each step added a skill I still use. Today I automate the cloud with Python, Terraform and GitHub Actions, and build AI agents with guardrails. I'm completing an M.S. in Information Technology at Illinois Tech, and I treat every project as a chance to build something technical and a little bit beautiful.</p>
+ </div>
+ <div class="id"><img src="img/hero.jpg" width="900" height="675" alt="Aiana in Chicago">
+  <div class="t">ACCESS CARD</div><div class="r">Cloud &amp; AI Developer · Python · Terraform · AWS</div>
+  <span class="chip">AWS Solutions Architect – Associate</span><span class="chip">AWS Cloud Practitioner</span><span class="chip">EF SET English C2</span><span class="chip">M.S. Information Technology · Illinois Tech</span><span class="chip">Kubernetes</span><span class="chip">Linux</span>
+  <div class="l">Kyrgyz · Russian · English</div>
+ </div></div>
+</section>
+
+<section class="glass sec reveal" id="work">
+ <div class="eyebrow">Problems I solve</div><h2>What I fix</h2>
+ <div class="cards"><article class="c"><div class="th t1"><em># terraform plan</em><br>+ aws_s3_bucket.site<br>+ aws_cloudfront_distribution<br><em># reviewed before apply</em></div><span class="pt">Problem</span><h4>Infrastructure built by hand, different every time</h4><p><b>Fix:</b> Terraform. The bucket, CDN, DNS record and certificate are code, with state stored remotely in S3.</p></article><article class="c"><div class="th t2"><em># workflow</em><br>pull_request → plan<br>merge to main → apply<br>no manual steps</div><span class="pt">Problem</span><h4>Deploys that depend on one person and one laptop</h4><p><b>Fix:</b> GitHub Actions runs <code>plan</code> on every pull request and <code>apply</code> on merge.</p></article><article class="c"><div class="th t3"><em># auth</em><br>OIDC → short-lived token<br>role: deploy (main only)<br>role: plan (read-only)</div><span class="pt">Problem</span><h4>Long-lived cloud keys sitting in repos and CI</h4><p><b>Fix:</b> OIDC with two least-privilege IAM roles. Nothing to leak and nothing to rotate.</p></article><article class="c"><div class="th t1"><em># plan-review agent</em><br>risk flags: deterministic<br>summary: AI, plain language<br>writes: comments only</div><span class="pt">Problem</span><h4>Risky infrastructure changes nobody has time to review</h4><p><b>Fix:</b> an AI agent reads every Terraform plan, flags destroys, IAM and open ports, and explains the change in plain words.</p></article><article class="c"><div class="th t2"><em>$</em> dig +short aiancooldevops.com<br><em>$</em> ufw status verbose<br><em>$</em> journalctl -u sshd</div><span class="pt">Problem</span><h4>Outages caused by DNS, firewall and network mistakes</h4><p><b>Fix:</b> hands-on Linux, DNS, firewalls and Active Directory experience, plus a master's degree focused on cloud and operating systems.</p></article><article class="c"><div class="th t3"><em># daily workflow</em><br>draft with Claude<br>review + test myself<br>ship with confidence</div><span class="pt">Problem</span><h4>Slow, repetitive ops work that eats the week</h4><p><b>Fix:</b> AI as a daily pair. It drafts scripts, explains errors and reviews changes, and I verify everything before it ships.</p></article></div>
+</section>
+
+<section class="glass sec reveal" id="ai">
+ <div class="eyebrow">AI-first</div><h2>How I work</h2>
+ <p class="ai">AI-first, to me, is a discipline of delegation: machines own execution, while I retain <em>judgment</em>, <em>accountability</em> and <em>taste</em>. Every agent I build operates within explicit guardrails, and every output is verified before it reaches production.</p>
+ <div class="cards cards4"><div class="c"><span class="n">01</span><h4 style="margin-top:8px">I pair with AI every day</h4><p>Claude helps me draft Terraform and scripts, explain errors and think through designs. I read, test and own every line that ships.</p></div><div class="c"><span class="n">02</span><h4 style="margin-top:8px">AI inside the pipeline</h4><p>Every infrastructure pull request on this site is reviewed by an AI agent that explains the Terraform plan in plain language.</p></div><div class="c"><span class="n">03</span><h4 style="margin-top:8px">Guardrails before cleverness</h4><p>The agent can only comment. It has a read-only role, deterministic risk checks, masked account IDs, and it treats the plan as untrusted input.</p></div><div class="c"><span class="n">04</span><h4 style="margin-top:8px">Next stop: AIOps and MLOps</h4><p>I'm growing from cloud and DevOps toward automating operations with AI, and toward the infrastructure that machine learning runs on.</p></div></div>
+</section>
+
+<section class="glass sec reveal" id="case">
+ <div class="eyebrow">Case study</div><h2>This page is the project</h2>
+ <div class="case-grid">
+  <div><svg class="diagram" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture: GitHub Actions authenticates to AWS with OIDC and deploys to a private S3 bucket served through CloudFront, with Route 53 and ACM in front.">
+            <rect class="group-box" x="30" y="30" width="230" height="120" rx="2"/>
+            <text class="group-label" x="40" y="46">CI/CD</text>
+
+            <rect class="group-box" x="470" y="20" width="300" height="220" rx="2"/>
+            <text class="group-label" x="480" y="36">AWS</text>
+
+            <rect class="node-box" x="50" y="60" width="90" height="42" rx="2"/>
+            <text class="node-label" x="62" y="78">pull_request</text>
+            <text class="node-sub" x="62" y="92">terraform plan</text>
+
+            <rect class="node-box" x="170" y="60" width="70" height="42" rx="2"/>
+            <text class="node-label" x="180" y="78">merge</text>
+            <text class="node-sub" x="180" y="92">→ main</text>
+
+            <rect class="node-box" x="110" y="115" width="120" height="30" rx="2"/>
+            <text class="node-label" x="122" y="134">OIDC token</text>
+
+            <path class="trace" d="M 140 81 L 170 81" />
+            <path class="trace" d="M 170 130 L 230 90" />
+
+            <rect class="node-box" x="500" y="45" width="90" height="38" rx="2"/>
+            <text class="node-label" x="512" y="62">Route 53</text>
+            <text class="node-sub" x="512" y="75">DNS</text>
+
+            <rect class="node-box" x="620" y="45" width="90" height="38" rx="2"/>
+            <text class="node-label" x="632" y="62">ACM</text>
+            <text class="node-sub" x="632" y="75">TLS cert</text>
+
+            <rect class="node-box" x="560" y="115" width="110" height="42" rx="2"/>
+            <text class="node-label" x="572" y="133">CloudFront</text>
+            <text class="node-sub" x="572" y="147">edge cache</text>
+
+            <path class="trace" d="M 545 83 L 600 115" />
+            <path class="trace" d="M 665 83 L 630 115" />
+
+            <rect class="node-box" x="580" y="185" width="90" height="42" rx="2"/>
+            <text class="node-label" x="592" y="203">S3 bucket</text>
+            <text class="node-sub" x="592" y="217">static site</text>
+
+            <path class="trace" d="M 615 157 L 615 185" />
+
+            <rect class="node-box" x="330" y="200" width="90" height="42" rx="2"/>
+            <text class="node-label" x="345" y="218">visitor</text>
+            <text class="node-sub" x="345" y="232">HTTPS</text>
+
+            <path class="trace" d="M 420 218 L 560 136" />
+
+            <path class="trace trace-anim" d="M 230 130 C 350 130, 400 40, 500 60" />
+
+            <path class="annotation-arrow" d="M 300 195 C 320 175, 340 140, 358 108" />
+            <text class="annotation-text" x="238" y="222" transform="rotate(-3 238 222)">no stored keys — just this</text>
+
+            <g transform="translate(760, 268)" opacity="0.6">
+              <rect x="0" y="4" width="2" height="2" fill="#5E5B55"/>
+              <rect x="8" y="4" width="2" height="2" fill="#5E5B55"/>
+              <rect x="0" y="6" width="10" height="8" fill="#5E5B55"/>
+              <rect x="2" y="9" width="1" height="1" fill="#FBF9F4"/>
+              <rect x="7" y="9" width="1" height="1" fill="#FBF9F4"/>
+              <rect x="3" y="12" width="4" height="1" fill="#FBF9F4"/>
+            </g>
+          </svg></div>
+  <div class="case-copy">
+   <div class="label">Infrastructure</div>
+   <h3>A private S3 bucket, served over CloudFront, deployed by GitHub Actions</h3>
+   <p>Every part of this — the bucket, the distribution, the DNS record, the certificate — is defined in Terraform with remote state in S3. GitHub Actions runs <code>plan</code> on every pull request and <code>apply</code> on merge, authenticating to AWS via OIDC rather than long-lived credentials.</p>
+   <div class="steps"><div class="step"><b>01</b>Plan</div><div class="step"><b>02</b>Review</div><div class="step"><b>03</b>Apply</div><div class="step"><b>04</b>Serve</div></div>
+   <div><span class="stat">0 stored keys</span><span class="stat">2 IAM roles</span><span class="stat">Private bucket</span><span class="stat">TLS 1.2+</span></div>
+  </div>
+ </div>
+ <div class="agent">
+  <div class="label">Pull request guardrail</div>
+  <h4>An AI agent reviews every infrastructure change</h4>
+  <p>On each pull request that touches <code>terraform/</code>, a read-only role runs <code>terraform plan</code> and the workflow posts one comment: a change table, deterministic risk flags (destroys, IAM, anything open to 0.0.0.0/0) and an AI summary. The agent can only comment, never apply.</p>
+ </div>
+</section>
+
+<section class="glass sec reveal" id="skills">
+ <div class="eyebrow">Toolbox</div><h2>Skills</h2>
+ <div class="skill-grid">
+        <div class="skill-box"><h4>AI</h4><div >
+          <span class="tag">Claude</span><span class="tag">AI-assisted development</span><span class="tag">GitHub Models</span><span class="tag">Agent guardrails</span>
+        </div></div>
+        <div class="skill-box"><h4>Cloud</h4><div >
+          <span class="tag">AWS S3</span><span class="tag">CloudFront</span><span class="tag">Route 53</span><span class="tag">IAM</span><span class="tag">VPC</span>
+        </div></div>
+        <div class="skill-box"><h4>IaC / CI-CD</h4><div >
+          <span class="tag">Terraform</span><span class="tag">GitHub Actions</span><span class="tag">OIDC</span><span class="tag">Kubernetes</span>
+        </div></div>
+        <div class="skill-box"><h4>Systems</h4><div >
+          <span class="tag">Linux administration</span><span class="tag">Operating systems</span><span class="tag">Active Directory</span>
+        </div></div>
+        <div class="skill-box"><h4>Networking</h4><div >
+          <span class="tag">DNS</span><span class="tag">Firewalls</span><span class="tag">Network design</span>
+        </div></div>
+        <div class="skill-box"><h4>Code</h4><div ><span class="tag">Python</span><span class="tag">Bash</span>
+          <span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span><span class="tag">React</span>
+        </div></div>
+      </div>
+</section>
+
+<section class="glass sec reveal" id="repos">
+ <div class="eyebrow">On GitHub</div><h2>Projects</h2>
+ <div class="repos">
+  <a class="repo" href="https://github.com/aian17/devops-portfolio" target="_blank" rel="noopener"><h4>aian17/devops-portfolio</h4><p>This site: Terraform, GitHub Actions with OIDC, and the AI plan-review agent.</p></a>
+  <a class="repo" href="https://github.com/aian17" target="_blank" rel="noopener"><h4>More on GitHub</h4><p>Other repositories and experiments.</p></a>
+ </div>
+</section>
+
+<section class="glass sec contact reveal" id="contact">
+ <div class="eyebrow">Let's talk</div><h2>Let's connect</h2>
+ <p>Hiring for cloud, automation or AI-first work in Chicago? Say hi, or read the code behind this page.</p>
+ <div class="btns"><a class="btn2" href="https://www.linkedin.com/in/aian-mambetova-8359572b8/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn2" href="https://github.com/aian17/devops-portfolio" target="_blank" rel="noopener">Source code ↗</a></div>
+</section>
+
+<footer>
+ <div class="q">Biggest ideas feel better together</div>
+ <div class="lk"><a href="https://github.com/aian17" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/aian-mambetova-8359572b8/" target="_blank" rel="noopener">LinkedIn</a><span>Chicago</span></div>
+ <div class="dep">aiancooldevops.com · HTTPS · <span id="deployed">live</span></div>
+</footer>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+// reveal
+(function(){var els=document.querySelectorAll('.reveal');
+ if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+ var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+ els.forEach(function(e){io.observe(e)});})();
+// typed headline (once)
+(function(){var el=document.getElementById('lead');if(!el||reduce)return;
+ var t=el.getAttribute('data-text'),i=0;el.textContent='';var c=document.createElement('span');c.className='caret';
+ var tx=document.createTextNode('');el.appendChild(tx);el.appendChild(c);
+ setTimeout(function step(){tx.nodeValue=t.slice(0,++i);if(i<t.length)setTimeout(step,32);else setTimeout(function(){c.remove()},1800)},900);})();
+// robot eyes follow the cursor
+(function(){var r=document.getElementById('robot');if(!r||reduce)return;
+ var eyes=r.querySelectorAll('.eye');
+ document.addEventListener('mousemove',function(e){var b=r.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height*.4;
+  var dx=e.clientX-cx,dy=e.clientY-cy,d=Math.hypot(dx,dy)||1,k=Math.min(d,300)/300*5;
+  eyes.forEach(function(g){g.style.translate=(dx/d*k)+'px '+(dy/d*k)+'px'});});})();
+// card glow follows the cursor
+document.querySelectorAll('.c').forEach(function(c){c.addEventListener('mousemove',function(e){var b=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-b.left)+'px');c.style.setProperty('--my',(e.clientY-b.top)+'px')})});
+// last deployed
+(function(){var out=document.getElementById('deployed');if(!out||!window.fetch)return;
+ fetch(location.pathname,{method:'HEAD',cache:'no-store'}).then(function(r){var lm=r.headers.get('last-modified');if(!lm)return;var d=new Date(lm);if(isNaN(d))return;
+  out.textContent='last deployed '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}).catch(function(){})})();
+console.log("%c  ▄▀▀▄▄▄▄▄▄▀▀▄  \n %c(  o        o  ) %cmeow — you found the cat in the diagram too","color:#8a6bd8;font-family:monospace","color:#8a6bd8;font-family:monospace","color:#6a6580;font-family:monospace");
+</script>
+</body>
+</html>
