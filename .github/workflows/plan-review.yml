@@ -1,0 +1,56 @@
+name: plan-review
+
+on:
+  pull_request:
+    paths:
+      - "terraform/**"
+
+permissions:
+  id-token: write       # OIDC to AWS
+  contents: read
+  pull-requests: write  # post the review comment
+  models: read          # call GitHub Models with the built-in GITHUB_TOKEN
+
+concurrency:
+  group: plan-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  plan-review:
+    runs-on: ubuntu-latest
+    env:
+      TF_IN_AUTOMATION: "true"
+      TF_VAR_github_repo: ${{ github.repository }}
+      TF_VAR_create_github_oidc_provider: ${{ vars.CREATE_GITHUB_OIDC_PROVIDER || 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_PLAN_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Terraform init
+        working-directory: terraform
+        run: |
+          ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+          terraform init -input=false -backend-config="bucket=tfstate-${ACCOUNT_ID}"
+
+      # -lock=false: this job is read-only and must not write a lock file to the state bucket.
+      - name: Terraform plan
+        working-directory: terraform
+        run: |
+          terraform plan -input=false -lock=false -no-color -out=tfplan
+          terraform show -json tfplan > plan.json
+          terraform show -no-color tfplan > plan.txt
+
+      - name: Review plan and comment on the pull request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: python3 .github/scripts/plan_review.py terraform/plan.json terraform/plan.txt
